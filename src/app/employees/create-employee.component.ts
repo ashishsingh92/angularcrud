@@ -22,7 +22,7 @@ export class CreateEmployeeComponent implements OnInit {
     phoneNumber: null,
     email: '',
     dateOfBirth: null,
-    department: '-1',
+    department: 'select',
     isActive: null,
     photoPath: null
   };
