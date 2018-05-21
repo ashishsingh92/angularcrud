@@ -6,15 +6,25 @@ import { Employee } from '../models/employee.model';
   templateUrl: './display-employee.component.html',
   styleUrls: ['./display-employee.component.css']
 })
-export class DisplayEmployeeComponent implements OnInit, OnChanges {
-  @Input() employee: Employee;
+
+  // export class DisplayEmployeeComponent implements OnInit, OnChanges {
+
+  export class DisplayEmployeeComponent implements OnInit {
+  private _employee: Employee;
+  @Input()
+  set employee(val: Employee) {
+    this._employee = val;
+  }
+  get employee(): Employee {
+    return this._employee;
+  }
   constructor() { }
 
   ngOnInit() {
   }
 
-  ngOnChanges(changes: SimpleChanges) {
-    console.log(changes);
-  }
+  // ngOnChanges(changes: SimpleChanges) {
+  //   console.log(changes);
+  // }
 
 }
