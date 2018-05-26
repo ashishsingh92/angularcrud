@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, OnChanges, SimpleChanges } from '@angular/core';
+import { Component, OnInit, Input, OnChanges, SimpleChanges, Output, EventEmitter } from '@angular/core';
 import { Employee } from '../models/employee.model';
 
 @Component({
@@ -10,14 +10,17 @@ import { Employee } from '../models/employee.model';
   // export class DisplayEmployeeComponent implements OnInit, OnChanges {
 
   export class DisplayEmployeeComponent implements OnInit {
-  private _employee: Employee;
-  @Input()
-  set employee(val: Employee) {
-    this._employee = val;
-  }
-  get employee(): Employee {
-    return this._employee;
-  }
+  @Input() employee: Employee;
+  @Output() notify: EventEmitter<string> = new EventEmitter<string>();
+
+  // Input change detection using property setter
+  // private _employee: Employee;
+  // set employee(val: Employee) {
+  //   this._employee = val;
+  // }
+  // get employee(): Employee {
+  //   return this._employee;
+  // }
   constructor() { }
 
   ngOnInit() {
@@ -27,4 +30,7 @@ import { Employee } from '../models/employee.model';
   //   console.log(changes);
   // }
 
+  handleClick() {
+    this.notify.emit(this.employee.name);
+  }
 }

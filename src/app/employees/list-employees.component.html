@@ -1,8 +1,12 @@
-<!-- <div *ngFor="let employee of employees">
-  <app-display-employee [employee]="employee"></app-display-employee>
-</div> -->
+<h1>
+  {{dataFromChild}}
+</h1>
+<div *ngFor="let employee of employees">
+  <app-display-employee [employee]="employee" (notify)="handleNotify($event)"></app-display-employee>
+</div>
 
+<!-- @Input() Example
 <button class="btn btn-primary" (click)="nextEmployee()">View Next Employee</button>
 <br/>
 <br/>
-<app-display-employee [employee]="employeeToDisplay"></app-display-employee>
+<app-display-employee [employee]="employeeToDisplay"></app-display-employee> -->
