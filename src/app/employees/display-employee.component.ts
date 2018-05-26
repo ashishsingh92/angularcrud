@@ -11,7 +11,7 @@ import { Employee } from '../models/employee.model';
 
   export class DisplayEmployeeComponent implements OnInit {
   @Input() employee: Employee;
-  @Output() notify: EventEmitter<string> = new EventEmitter<string>();
+  // @Output() notify: EventEmitter<string> = new EventEmitter<string>();
 
   // Input change detection using property setter
   // private _employee: Employee;
@@ -30,7 +30,8 @@ import { Employee } from '../models/employee.model';
   //   console.log(changes);
   // }
 
-  handleClick() {
-    this.notify.emit(this.employee.name);
-  }
+  // @Output() method
+  // handleClick() {
+  //   this.notify.emit(this.employee.name);
+  // }
 }

@@ -1,8 +1,10 @@
-<h1>
-  {{dataFromChild}}
-</h1>
+<!-- <h1 #h1Variable>  
+</h1> -->
 <div *ngFor="let employee of employees">
-  <app-display-employee [employee]="employee" (notify)="handleNotify($event)"></app-display-employee>
+  <!-- <app-display-employee [employee]="employee" (notify)="handleNotify($event)"></app-display-employee> @Output code -->
+  <!-- <div (click)="h1Variable.innerHTML = childComponent.employee.name + ' ' + childComponent.employee.gender"> Call child component using property(template ref var) -->
+    <app-display-employee [employee]="employee"></app-display-employee>
+  <!-- </div> -->
 </div>
 
 <!-- @Input() Example
