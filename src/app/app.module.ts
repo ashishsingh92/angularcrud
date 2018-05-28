@@ -13,6 +13,7 @@ import { EmployeeService } from './employees/employee.service';
 import { DisplayEmployeeComponent } from './employees/display-employee.component';
 import { CreateEmployeeCanDeactivateGuardService } from './employees/create-employee-can-deactive-guard.service';
 import { EmployeeDetailsComponent } from './employees/employee-details.component';
+import { EmployeeFilterPipe } from './employees/employee-filter.pipe';
 
 const appRoutes: Routes = [
   { path: 'list', component: ListEmployeesComponent },
@@ -27,9 +28,8 @@ const appRoutes: Routes = [
 
 @NgModule({
   declarations: [AppComponent, ListEmployeesComponent, CreateEmployeeComponent, SelectRequiredValidatorDirective,
-    ConfirmEqualValidatorDirective,
-    DisplayEmployeeComponent,
-    EmployeeDetailsComponent
+    ConfirmEqualValidatorDirective, DisplayEmployeeComponent, EmployeeDetailsComponent,
+    EmployeeFilterPipe
   ],
   imports: [BrowserModule, RouterModule.forRoot(appRoutes), FormsModule, BsDatepickerModule.forRoot()],
   providers: [EmployeeService, CreateEmployeeCanDeactivateGuardService],
